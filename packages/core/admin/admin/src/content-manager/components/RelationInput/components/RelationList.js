@@ -7,6 +7,7 @@ const ShadowBox = styled(Box)`
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  flex: 1;
 
   &:before,
   &:after {
