@@ -8,8 +8,6 @@ import {
   Box,
   Link,
   Icon,
-  FieldError,
-  FieldHint,
   Flex,
   TextButton,
   Typography,
@@ -285,12 +283,6 @@ const RelationInput = ({
             {ListItem}
           </List>
         </RelationList>
-      )}
-      {(description || error) && (
-        <Box paddingTop={2}>
-          <FieldHint />
-          <FieldError />
-        </Box>
       )}
     </Flex>
   );

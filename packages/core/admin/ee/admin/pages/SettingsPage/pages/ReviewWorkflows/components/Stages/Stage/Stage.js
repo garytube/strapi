@@ -176,6 +176,8 @@ export function Stage({
 
   const { themeColorName } = colorField.value ? getStageColorByHex(colorField.value) : {};
 
+  // TODO: the .toUpperCase() conversion can be removed once the hex code is normalized in
+  // the admin API
   const colorValue = colorOptions.find(({ value }) => value === colorField.value.toUpperCase());
 
   return (
