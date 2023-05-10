@@ -176,6 +176,8 @@ export function Stage({
 
   const { themeColorName } = colorField.value ? getStageColorByHex(colorField.value) : {};
 
+  const colorValue = colorOptions.find(({ value }) => value === colorField.value.toUpperCase());
+
   return (
     <Box ref={composedRef}>
       {liveText && <VisuallyHidden aria-live="assertive">{liveText}</VisuallyHidden>}
@@ -274,6 +276,7 @@ export function Stage({
                       marginRight="-3px"
                     />
                   }
+                  defaultTextValue={colorValue?.label}
                   onChange={(value) => {
                     colorField.onChange({ target: { value } });
                     dispatch(updateStage(id, { color: value }));

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line no-restricted-imports
 import { ReactSelect as Select } from '@strapi/helper-plugin';
 
 import Option from './Option';
