@@ -23,7 +23,7 @@ import { Drag, Trash } from '@strapi/icons';
 import { getEmptyImage } from 'react-dnd-html5-backend';
 
 import { deleteStage, updateStagePosition, updateStage } from '../../../actions';
-import { getAvailableStageColors } from '../../../utils/colors';
+import { getAvailableStageColors, getStageColorByHex } from '../../../utils/colors';
 import { useDragAndDrop } from '../../../../../../../../../admin/src/content-manager/hooks';
 import { composeRefs } from '../../../../../../../../../admin/src/content-manager/utils';
 import { DRAG_DROP_TYPES } from '../../../constants';
@@ -174,6 +174,8 @@ export function Stage({
     dragPreviewRef(getEmptyImage(), { captureDraggingState: false });
   }, [dragPreviewRef, index]);
 
+  const { themeColorName } = colorField.value ? getStageColorByHex(colorField.value) : {};
+
   return (
     <Box ref={composedRef}>
       {liveText && <VisuallyHidden aria-live="assertive">{liveText}</VisuallyHidden>}
@@ -265,6 +267,7 @@ export function Stage({
                       as="span"
                       height={2}
                       background={colorField.value}
+                      borderColor={themeColorName === 'neutral0' ? 'neutral150' : 'transparent'}
                       hasRadius
                       shrink={0}
                       width={2}
@@ -277,23 +280,30 @@ export function Stage({
                   }}
                   value={colorField.value}
                 >
-                  {colorOptions.map(({ value, label, color }) => (
-                    <ComboboxOption value={value} textValue={label}>
-                      <Flex as="span" alignItems="center" gap={2}>
-                        <Flex
-                          as="span"
-                          height={2}
-                          background={color}
-                          hasRadius
-                          shrink={0}
-                          width={2}
-                        />
-                        <Typography textColor="neutral800" ellipsis>
-                          {label}
-                        </Typography>
-                      </Flex>
-                    </ComboboxOption>
-                  ))}
+                  {colorOptions.map(({ value, label, color }) => {
+                    const { themeColorName } = getStageColorByHex(color);
+
+                    return (
+                      <ComboboxOption value={value} textValue={label}>
+                        <Flex as="span" alignItems="center" gap={2}>
+                          <Flex
+                            as="span"
+                            height={2}
+                            background={color}
+                            borderColor={
+                              themeColorName === 'neutral0' ? 'neutral150' : 'transparent'
+                            }
+                            hasRadius
+                            shrink={0}
+                            width={2}
+                          />
+                          <Typography textColor="neutral800" ellipsis>
+                            {label}
+                          </Typography>
+                        </Flex>
+                      </ComboboxOption>
+                    );
+                  })}
                 </Combobox>
               </GridItem>
             </Grid>

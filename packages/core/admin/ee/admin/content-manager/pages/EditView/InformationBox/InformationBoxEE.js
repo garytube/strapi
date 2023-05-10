@@ -11,6 +11,7 @@ import { useMutation } from 'react-query';
 
 import { useReviewWorkflows } from '../../../../pages/SettingsPage/pages/ReviewWorkflows/hooks/useReviewWorkflows';
 import Information from '../../../../../../admin/src/content-manager/pages/EditView/Information';
+import { getStageColorByHex } from '../../../../pages/SettingsPage/pages/ReviewWorkflows/utils/colors';
 
 const ATTRIBUTE_NAME = 'strapi_reviewWorkflows_stage';
 
@@ -98,6 +99,10 @@ export function InformationBoxEE() {
     }
   };
 
+  const { themeColorName } = activeWorkflowStage?.color
+    ? getStageColorByHex(activeWorkflowStage?.color)
+    : {};
+
   return (
     <Information.Root>
       <Information.Title />
@@ -118,6 +123,7 @@ export function InformationBoxEE() {
               as="span"
               height={2}
               background={activeWorkflowStage?.color}
+              borderColor={themeColorName === 'neutral0' ? 'neutral150' : 'transparent'}
               hasRadius
               shrink={0}
               width={2}
@@ -135,15 +141,28 @@ export function InformationBoxEE() {
           )}
         >
           {workflow
-            ? workflow.stages.map(({ id, color, name }) => (
-                <SingleSelectOption
-                  startIcon={<Flex height={2} background={color} hasRadius shrink={0} width={2} />}
-                  value={id}
-                  textValue={name}
-                >
-                  {name}
-                </SingleSelectOption>
-              ))
+            ? workflow.stages.map(({ id, color, name }) => {
+                const { themeColorName } = getStageColorByHex(color);
+
+                return (
+                  <SingleSelectOption
+                    startIcon={
+                      <Flex
+                        height={2}
+                        background={color}
+                        borderColor={themeColorName === 'neutral0' ? 'neutral150' : 'transparent'}
+                        hasRadius
+                        shrink={0}
+                        width={2}
+                      />
+                    }
+                    value={id}
+                    textValue={name}
+                  >
+                    {name}
+                  </SingleSelectOption>
+                );
+              })
             : []}
         </SingleSelect>
       )}
