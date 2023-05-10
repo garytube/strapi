@@ -189,6 +189,8 @@ const RelationInput = ({
       updatedRelationsWith.current === 'onChange' &&
       relations.length !== previewRelationsLength
     ) {
+      setValue('');
+      setFilterValue('');
       listRef.current.scrollToItem(relations.length, 'end');
     } else if (
       updatedRelationsWith.current === 'loadMore' &&
@@ -226,8 +228,6 @@ const RelationInput = ({
           textValue={value}
           filterValue={filterValue}
           onChange={(relationId) => {
-            setValue('');
-            setFilterValue('');
             onRelationConnect(options.find((opt) => opt.id === relationId));
             updatedRelationsWith.current = 'onChange';
           }}
