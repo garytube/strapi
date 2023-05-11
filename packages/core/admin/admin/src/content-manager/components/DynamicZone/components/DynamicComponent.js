@@ -20,6 +20,7 @@ import { useContentTypeLayout, useDragAndDrop } from '../../../hooks';
 import { composeRefs, getTrad, ItemTypes } from '../../../utils';
 
 import FieldComponent from '../../FieldComponent';
+import { ComponentIcon } from '../../ComponentIcon';
 
 const ActionsFlex = styled(Flex)`
   /* 
@@ -194,6 +195,7 @@ const DynamicZoneComponent = ({
         ) : (
           <Accordion expanded={isOpen} onToggle={handleToggle} size="S" error={errorMessage}>
             <AccordionToggle
+              startIcon={<ComponentIcon icon={icon} showBackground={false} size="S" />}
               action={accordionActions}
               title={`${friendlyName}${mainValue}`}
               togglePosition="left"
