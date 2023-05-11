@@ -81,10 +81,6 @@ exports[`Content-Manager || RelationInput should render and match snapshot 1`] =
   border: 1px solid #c6f0c2;
 }
 
-.c44 {
-  padding-top: 8px;
-}
-
 .c5 {
   font-size: 0.75rem;
   line-height: 1.33;
@@ -464,22 +460,22 @@ exports[`Content-Manager || RelationInput should render and match snapshot 1`] =
   cursor: inherit;
 }
 
+.c44[data-selected] .c4 {
+  color: #4945ff;
+  font-weight: bold;
+}
+
+.c44[data-highlighted] .c4 {
+  color: #4945ff;
+  font-weight: bold;
+}
+
 .c45[data-selected] .c4 {
   color: #4945ff;
   font-weight: bold;
 }
 
 .c45[data-highlighted] .c4 {
-  color: #4945ff;
-  font-weight: bold;
-}
-
-.c46[data-selected] .c4 {
-  color: #4945ff;
-  font-weight: bold;
-}
-
-.c46[data-highlighted] .c4 {
   color: #4945ff;
   font-weight: bold;
 }
@@ -671,56 +667,60 @@ exports[`Content-Manager || RelationInput should render and match snapshot 1`] =
             Some Relation
           </label>
           <div
-            class="c7"
+            tabindex="-1"
           >
-            <span
-              class="c8 c9"
+            <div
+              class="c7"
             >
-              <input
-                aria-autocomplete="both"
-                aria-controls="radix-0"
-                aria-disabled="false"
-                aria-expanded="false"
-                aria-invalid="false"
-                aria-labelledby="1-hint 1-error"
-                aria-required="false"
-                class="c10"
-                data-state="closed"
-                id="1"
-                placeholder="Select..."
-                role="combobox"
-                type="text"
-                value=""
-              />
-            </span>
-            <span
-              class="c9"
-            >
-              <button
-                aria-controls="radix-0"
-                aria-disabled="false"
-                aria-expanded="false"
-                aria-hidden="true"
-                class="c11"
-                tabindex="-1"
-                type="button"
+              <span
+                class="c8 c9"
               >
-                <svg
-                  fill="none"
-                  height="1rem"
-                  viewBox="0 0 14 8"
-                  width="1rem"
-                  xmlns="http://www.w3.org/2000/svg"
+                <input
+                  aria-autocomplete="both"
+                  aria-controls="radix-0"
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  aria-invalid="false"
+                  aria-labelledby="1-hint 1-error"
+                  aria-required="false"
+                  class="c10"
+                  data-state="closed"
+                  id="1"
+                  placeholder="Select..."
+                  role="combobox"
+                  type="text"
+                  value=""
+                />
+              </span>
+              <span
+                class="c9"
+              >
+                <button
+                  aria-controls="radix-0"
+                  aria-disabled="false"
+                  aria-expanded="false"
+                  aria-hidden="true"
+                  class="c11"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
-                    fill="#32324D"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </span>
+                  <svg
+                    fill="none"
+                    height="1rem"
+                    viewBox="0 0 14 8"
+                    width="1rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
+                      fill="#32324D"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </span>
+            </div>
           </div>
           <p
             class="c4 c12"
@@ -1126,9 +1126,6 @@ exports[`Content-Manager || RelationInput should render and match snapshot 1`] =
         </ol>
       </div>
     </div>
-    <div
-      class="c44"
-    />
   </div>
   <div
     class="c18"
