@@ -169,16 +169,28 @@ exports[`LocaleSelect shows an aria-busy element when loading the data 1`] = `
       >
         <input
           aria-autocomplete="both"
+<<<<<<< HEAD
           aria-controls="radix-0"
           aria-disabled="false"
           aria-expanded="false"
           aria-invalid="false"
           aria-labelledby="1-hint 1-error"
+=======
+          aria-controls="radix-:r3:"
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-invalid="false"
+          aria-labelledby=":r0:-hint :r0:-error"
+>>>>>>> 382a255e50 (move components' icons to a constants file and other improves)
           aria-required="false"
           class="c7"
           data-placeholder=""
           data-state="closed"
+<<<<<<< HEAD
           id="1"
+=======
+          id=":r0:"
+>>>>>>> 382a255e50 (move components' icons to a constants file and other improves)
           placeholder="Select"
           role="combobox"
           type="text"
@@ -189,7 +201,11 @@ exports[`LocaleSelect shows an aria-busy element when loading the data 1`] = `
         class="c6"
       >
         <button
+<<<<<<< HEAD
           aria-controls="radix-0"
+=======
+          aria-controls="radix-:r3:"
+>>>>>>> 382a255e50 (move components' icons to a constants file and other improves)
           aria-disabled="false"
           aria-expanded="false"
           aria-hidden="true"
