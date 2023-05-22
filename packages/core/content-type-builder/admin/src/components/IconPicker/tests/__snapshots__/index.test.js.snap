@@ -429,6 +429,7 @@ exports[`IconPicker should render 1`] = `
           />
         </svg>
       </button>
+      
     </div>
   </div>
   <div
