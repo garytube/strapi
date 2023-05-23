@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, lightTheme } from '@strapi/design-system';
+import { DesignSystemProvider } from '@strapi/design-system';
 import { IntlProvider } from 'react-intl';
 import { render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -9,9 +9,9 @@ import GenericInput from '../index';
 function ComponentFixture(props) {
   return (
     <IntlProvider locale="en" messages={{}}>
-      <ThemeProvider theme={lightTheme}>
+      <DesignSystemProvider locale="en-GB">
         <GenericInput {...props} />
-      </ThemeProvider>
+      </DesignSystemProvider>
     </IntlProvider>
   );
 }
