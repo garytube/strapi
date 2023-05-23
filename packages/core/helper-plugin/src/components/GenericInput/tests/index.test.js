@@ -58,11 +58,7 @@ function setupDatetimePicker(props) {
     ...props,
   };
 
-  const rendered = render(<ComponentFixture {...DATETIMEPICKER_FIXTURE_PROPS} />);
-
-  return {
-    ...rendered,
-  };
+  return render(<ComponentFixture {...DATETIMEPICKER_FIXTURE_PROPS} />);
 }
 /**
  * We extend the timeout of these tests because the DS
@@ -174,9 +170,10 @@ describe('GenericInput', () => {
     test('simulate clicking on the Clear button in the date and check if the date and time are empty', async () => {
       const user = userEvent.setup();
       const { getByRole } = setupDatetimePicker();
+
       await user.click(getByRole('combobox', { name: 'Choose date' }));
       await user.click(getByRole('gridcell', { name: /15/ }));
-      await user.click(getByRole('button', { name: /clear date/i }));
+      await user.click(getByRole('button', { name: 'Clear date' }));
 
       expect(getByRole('combobox', { name: 'Choose date' })).toHaveValue('');
       expect(getByRole('combobox', { name: 'Choose time' })).toHaveValue('');
